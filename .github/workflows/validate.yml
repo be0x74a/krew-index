@@ -1,0 +1,32 @@
+name: Validate manifests
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/*.yaml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      BASE_REF: ${{ github.base_ref }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install krew
+        run: |
+          set -x
+          OS=$(uname | tr '[:upper:]' '[:lower:]')
+          ARCH=$(uname -m | sed -e 's/x86_64/amd64/' -e 's/arm.*$/arm/' -e 's/aarch64/arm64/')
+          KREW="krew-${OS}_${ARCH}"
+          curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz"
+          tar zxvf "${KREW}.tar.gz"
+          ./"${KREW}" install krew
+          echo "${KREW_ROOT:-$HOME/.krew}/bin" >> $GITHUB_PATH
+
+      - name: Validate changed manifests
+        run: |
+          for file in $(git diff --name-only "origin/${BASE_REF}...HEAD" -- 'plugins/*.yaml'); do
+            echo "Validating $file"
+            kubectl krew install --manifest="$file" --dry-run
+          done
