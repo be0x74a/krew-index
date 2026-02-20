@@ -4,52 +4,57 @@ kind: Plugin
 metadata:
   name: xctx
 spec:
-  version: v0.1.3
+  version: v0.2.0
   platforms:
     - bin: kubectl-xctx.exe
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_windows_arm64.zip
-      sha256: 1461a8e56c1dedca01f42d08741b855c398ab08fb818afe0a1b4d826631db738
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_windows_arm64.zip
+      sha256: aed3dacd37568d4ddfb9c846138e9b65cda875fd5835366abb1fcf7ebaa4c813
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubectl-xctx.exe
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_windows_amd64.zip
-      sha256: 91b838fc95c65680fc17173d79a74a22d88731fe680a9b164294b4b038c378e1
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_windows_amd64.zip
+      sha256: e9da4a131b1552c976cb91b2219e219c4a29191ff577aa614c3bbbcedaaa144d
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_linux_arm64.tar.gz
-      sha256: f3f1cc07b544cf61b56121279d2009ed2f1d2150d7b1a9d8435fa0375b1d1a48
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_linux_arm64.tar.gz
+      sha256: cfa438c134cf4cfac15dfa15b3787764f7e8a149dafd9f4bbda57fe27105c8b4
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_linux_amd64.tar.gz
-      sha256: ab16c60a86e44fb9e15cad4f7c0756398f73275164ce9bb0c96b523cb87bdb8f
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_linux_amd64.tar.gz
+      sha256: 5c00d05f865bfbac3d7820667432675b0457d1ced909094123c14cbf491c7e37
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_darwin_arm64.tar.gz
-      sha256: 2a6eb930afde5cd97b4564fb9068ac4cada70016a30854c207049b3e84f4562b
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_darwin_arm64.tar.gz
+      sha256: 8233e976c2bbcf912944b018296242f0851fe0cd1add5697c20b2b0a41a310da
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.1.3/kubectl-xctx_0.1.3_darwin_amd64.tar.gz
-      sha256: 2297a901339dd3d4cbe24db9a091721fe33b3454c9bf1ed4a6d89b28db3aa29a
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_darwin_amd64.tar.gz
+      sha256: 4812d241cb6df300458e04d1c9a4716bf7abc31b108eb2611ad24c0a15763e0b
       selector:
         matchLabels:
           os: darwin
           arch: amd64
   shortDescription: Execute kubectl commands across multiple contexts
   homepage: https://github.com/be0x74a/kubectl-xctx
+  caveats: |
+    To enable shell completion for kubectl xctx, run:
+
+      printf '#!/usr/bin/env sh\nkubectl-xctx __complete "$@"\n' > ~/.krew/bin/kubectl_complete-xctx
+      chmod +x ~/.krew/bin/kubectl_complete-xctx
   description: |
     kubectl xctx runs a kubectl command across all Kubernetes contexts
     whose name matches a regular expression, printing a labeled header
