@@ -4,46 +4,46 @@ kind: Plugin
 metadata:
   name: xctx
 spec:
-  version: v0.2.0
+  version: v0.3.0
   platforms:
     - bin: kubectl-xctx.exe
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_windows_arm64.zip
-      sha256: aed3dacd37568d4ddfb9c846138e9b65cda875fd5835366abb1fcf7ebaa4c813
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_windows_arm64.zip
+      sha256: 4c609a9d6e5f325b44e57c3994ab9909626d59f2d4fe5288e2c275fe877906b7
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubectl-xctx.exe
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_windows_amd64.zip
-      sha256: e9da4a131b1552c976cb91b2219e219c4a29191ff577aa614c3bbbcedaaa144d
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_windows_amd64.zip
+      sha256: 541618c13c8ad64b727a905e6bc89d9734e02135a3d798a1996297d346bf0b91
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_linux_arm64.tar.gz
-      sha256: cfa438c134cf4cfac15dfa15b3787764f7e8a149dafd9f4bbda57fe27105c8b4
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_linux_arm64.tar.gz
+      sha256: 6623eb0f474615e0627fb98393afb6a9c8e78237faa50f7dfacfa892b5bc7b42
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_linux_amd64.tar.gz
-      sha256: 5c00d05f865bfbac3d7820667432675b0457d1ced909094123c14cbf491c7e37
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_linux_amd64.tar.gz
+      sha256: 658c0f931984a45bae779e3a9fcc66954876edd5ddb086cb54d9f71f6ae587dd
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_darwin_arm64.tar.gz
-      sha256: 8233e976c2bbcf912944b018296242f0851fe0cd1add5697c20b2b0a41a310da
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_darwin_arm64.tar.gz
+      sha256: ad4f20552aacb4c9707aa89469743b840c0827774f680b4802ed5de43dfddd66
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: kubectl-xctx
-      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.2.0/kubectl-xctx_0.2.0_darwin_amd64.tar.gz
-      sha256: 4812d241cb6df300458e04d1c9a4716bf7abc31b108eb2611ad24c0a15763e0b
+      uri: https://github.com/be0x74a/kubectl-xctx/releases/download/v0.3.0/kubectl-xctx_0.3.0_darwin_amd64.tar.gz
+      sha256: f03186c0b2d2995f6dad4a2439e0f1f745627a5dbac88bb54dfff1746f4c5379
       selector:
         matchLabels:
           os: darwin
